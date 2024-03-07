@@ -11,7 +11,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/hialmar/amc_config.git
+          # uri: https://github.com/hialmar/amc_config.git
+          # pour docker configs CT
+          uri: https://bitbucket.org/CTeyssie/miage-m2-ams-microbanque-config.git
+          username: VotreCpt
+          password: VotreMdp
           clone-on-start: true
 
 # Activation des endpoints pour le monitoring
@@ -30,9 +34,9 @@ eureka:
     serviceUrl:
     # url d'accès à l'annuaire
     # SANS DOCKER
-      defaultZone: http://localhost:10001/eureka/
+    #  defaultZone: http://localhost:10001/eureka/
     # AVEC DOCKER
-    # defaultZone: http://bnkannuaire:10001/eureka/
+      defaultZone: http://bnkannuaire:10001/eureka/
   instance:
     metadata-map:
       prometheus.scrape: "true"
